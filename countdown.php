@@ -1,7 +1,7 @@
 <?php
 function twitterCountdown($to, $from = null)
 {
-  // array shifting
+  // shift arguments
   $diff = ($from !== null) ? $to - $from : $to;
 
   $units = array(
@@ -64,8 +64,7 @@ function twitterCountdown($to, $from = null)
   {
     if($unitsCount < 2 || $key == ($unitsCount - 1))
     {
-      $string .= $value . ' ';
-      break;
+      return $string . $value;
     }
 
     $string .= $value . (($key == ($unitsCount - 2)) ? ' und ' : ', ');

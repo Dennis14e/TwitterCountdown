@@ -21,11 +21,11 @@ $from = time();
 $to = strtotime('2020-01-01');
 $diff = $to - $from;
 
-// $to is in the past, exit
-if($diff < 0) exit;
+// $to is in the past (longer than five minutes), exit
+if($diff < -300) exit;
 
-// $to is in the next five minutes
-if($diff < 300)
+// $to is/was in the next five minutes
+if($diff >= -300 && $diff <= 300)
 {
   $string = 'Countdown wird in den nächsten 5 Minuten ablaufen!';
 }
